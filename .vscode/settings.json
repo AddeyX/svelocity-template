@@ -1,0 +1,14 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"files.exclude": {
+		"**/.svelte-kit": true,
+		"**/_generated": true,
+		"**/worker-configuration.d.ts": true
+	},
+	"search.exclude": {
+		"**/.svelte-kit": true,
+		"**/_generated": true,
+		"**/node_modules": true
+	}
+}

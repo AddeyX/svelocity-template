@@ -1,0 +1,44 @@
+{
+	"name": "stack",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"packageManager": "pnpm@11.0.4",
+	"engines": {
+		"node": ">=22.23.2",
+		"pnpm": "11.0.4"
+	},
+	"scripts": {
+		"dev": "pnpm --filter web dev",
+		"dev:site": "pnpm --filter site dev",
+		"dev:desktop": "pnpm --filter desktop dev",
+		"dev:mobile": "pnpm --filter mobile dev",
+		"mobile:sync": "pnpm --filter mobile sync",
+		"cdev": "pnpm --filter @stack/backend dev",
+		"build": "pnpm -r --if-present build",
+		"build:web": "pnpm --filter web build",
+		"build:site": "pnpm --filter site build",
+		"preview": "pnpm --filter web preview",
+		"preview:site": "pnpm --filter site preview",
+		"check": "pnpm -r --if-present check",
+		"test": "node --test scripts/*.test.mjs && pnpm --filter web --filter site --filter desktop --filter mobile --filter @stack/backend test",
+		"gen": "pnpm -r --if-present gen",
+		"lint": "node scripts/prettier-changed.mjs --check",
+		"format": "node scripts/prettier-changed.mjs --write",
+		"audit:prod": "pnpm audit --prod --audit-level high",
+		"check:changelog": "node scripts/check-changelog.mjs",
+		"kill:dev": "bash scripts/kill-dev.sh",
+		"th": "node scripts/toggle-hidden-files.mjs",
+		"branches:prune": "node scripts/prune-merged-branches.mjs",
+		"env:push": "node scripts/push-env.mjs",
+		"rename": "node scripts/rename-stack.mjs",
+		"deploy:backend": "pnpm --filter @stack/backend run deploy",
+		"deploy:web": "pnpm --filter web run deploy",
+		"deploy:site": "pnpm --filter site run deploy"
+	},
+	"devDependencies": {
+		"prettier": "^3.8.3",
+		"prettier-plugin-svelte": "^3.5.2",
+		"prettier-plugin-tailwindcss": "^0.8.0"
+	}
+}

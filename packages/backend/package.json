@@ -1,0 +1,36 @@
+{
+	"name": "@stack/backend",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"exports": {
+		"./api": {
+			"types": "./convex/_generated/api.d.ts",
+			"default": "./convex/_generated/api.js"
+		},
+		"./dataModel": {
+			"types": "./convex/_generated/dataModel.d.ts",
+			"default": "./convex/_generated/dataModel.d.ts"
+		}
+	},
+	"scripts": {
+		"dev": "convex dev",
+		"codegen": "convex codegen --typecheck disable",
+		"deploy": "convex deploy",
+		"check": "tsc --noEmit -p tsconfig.json",
+		"test": "vitest run"
+	},
+	"dependencies": {
+		"@auth/core": "0.41.3",
+		"@convex-dev/auth": "0.0.94",
+		"convex": "1.46.0"
+	},
+	"devDependencies": {
+		"@edge-runtime/vm": "^5.0.0",
+		"@types/node": "^22.19.0",
+		"convex-test": "^0.0.53",
+		"typescript": "^6.0.2",
+		"vite": "8.0.16",
+		"vitest": "4.1.10"
+	}
+}

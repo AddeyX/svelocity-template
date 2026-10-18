@@ -1,0 +1,3 @@
+interface:
+  display_name: "Write Workflow"
+  short_description: "Create a playbook under docs/workflow"

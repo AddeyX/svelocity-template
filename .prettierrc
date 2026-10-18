@@ -1,0 +1,27 @@
+{
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"printWidth": 100,
+	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
+	"overrides": [
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte"
+			}
+		},
+		{
+			"files": "apps/web/**/*.{ts,js,svelte,css}",
+			"options": {
+				"tailwindStylesheet": "./apps/web/src/routes/layout.css"
+			}
+		},
+		{
+			"files": "apps/site/**/*.{ts,js,svelte,css}",
+			"options": {
+				"tailwindStylesheet": "./apps/site/src/routes/layout.css"
+			}
+		}
+	]
+}

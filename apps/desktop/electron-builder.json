@@ -1,0 +1,21 @@
+{
+	"$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+	"appId": "app.stack.desktop",
+	"productName": "Stack",
+	"directories": {
+		"output": "release"
+	},
+	"files": ["build/**", "dist-electron/**", "package.json"],
+	"mac": {
+		"category": "public.app-category.productivity",
+		"target": [{ "target": "dmg", "arch": ["arm64"] }],
+		"identity": null
+	},
+	"win": {
+		"target": [{ "target": "nsis", "arch": ["x64"] }]
+	},
+	"linux": {
+		"target": [{ "target": "AppImage", "arch": ["x64"] }],
+		"category": "Utility"
+	}
+}

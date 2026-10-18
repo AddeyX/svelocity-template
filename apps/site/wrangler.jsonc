@@ -1,0 +1,19 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "stack-site",
+	"compatibility_date": "2026-10-14",
+	"compatibility_flags": ["nodejs_als"],
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"workers_dev": true,
+	"preview_urls": true,
+	"env": {
+		"production": {
+			"name": "stack-site"
+			// Add { "pattern": "example.com", "custom_domain": true } when the host exists.
+		}
+	}
+}

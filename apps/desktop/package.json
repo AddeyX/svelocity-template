@@ -1,0 +1,46 @@
+{
+	"name": "desktop",
+	"private": true,
+	"version": "0.0.1",
+	"description": "Stack desktop shell. SvelteKit routes live in the URL hash inside Electron.",
+	"type": "module",
+	"main": "dist-electron/main.js",
+	"scripts": {
+		"dev": "concurrently -k -n vite,electron \"vite dev --port 5175 --strictPort\" \"wait-on http://localhost:5175 && pnpm build:electron && cross-env NODE_ENV=development electron .\"",
+		"build:renderer": "vite build",
+		"build:main": "vite build -c vite.main.config.ts",
+		"build:preload": "vite build -c vite.preload.config.ts",
+		"build:electron": "pnpm build:main && pnpm build:preload",
+		"build": "pnpm build:renderer && pnpm build:electron",
+		"start": "electron .",
+		"package": "pnpm build && electron-builder --config electron-builder.json",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.electron.json",
+		"test": "vitest run --config vitest.config.ts"
+	},
+	"dependencies": {
+		"@stack/backend": "workspace:*",
+		"@stack/tokens": "workspace:*",
+		"bits-ui": "^2.18.1",
+		"convex": "1.46.0",
+		"convex-svelte": "^0.14.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "2.70.2",
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
+		"@tailwindcss/vite": "4.3.0",
+		"@types/node": "^22.19.0",
+		"concurrently": "^9.2.1",
+		"cross-env": "^10.1.0",
+		"electron": "^35.7.5",
+		"electron-builder": "^26.0.12",
+		"svelte": "5.56.5",
+		"svelte-check": "4.4.8",
+		"tailwindcss": "4.3.0",
+		"typescript": "^6.0.2",
+		"vite": "8.0.16",
+		"vitest": "4.1.10",
+		"wait-on": "^8.0.5"
+	}
+}

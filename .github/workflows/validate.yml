@@ -1,0 +1,116 @@
+name: Validate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # `validate` is the required status check, so this job must always run and
+  # always report. Docs-only skips are on the steps, not paths-ignore.
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PRETTIER_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+      # Placeholders. Not a deployment. Vite inlines them at build time.
+      PUBLIC_CONVEX_URL: https://example.convex.cloud
+      PUBLIC_CONVEX_SITE_URL: https://example.convex.site
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Fails open: anything other than a pull request with both SHAs present
+      # validates in full. .github/** is not in the ignore list, so a change to
+      # this file is still validated.
+      - name: Detect code changes
+        id: changed
+        run: |
+          BASE='${{ github.event.pull_request.base.sha }}'
+          HEAD='${{ github.event.pull_request.head.sha }}'
+          if [ -z "$BASE" ] || [ -z "$HEAD" ]; then
+            echo 'code=true' >> "$GITHUB_OUTPUT"
+            echo 'No pull-request context — running full validation.'
+            exit 0
+          fi
+          CHANGED=$(git diff --name-only "$BASE...$HEAD")
+          echo "Changed files:"
+          echo "$CHANGED" | sed 's/^/  /'
+          if echo "$CHANGED" | grep -qvE '(^docs/|\.md$|^\.cursor/|^\.agents/|^\.codex/|^\.claude/)'; then
+            echo 'code=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'code=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: pnpm/action-setup@v4
+        if: steps.changed.outputs.code == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.changed.outputs.code == 'true'
+        with:
+          node-version: 22.23.2
+          cache: pnpm
+
+      - name: Install
+        if: steps.changed.outputs.code == 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Prepare example env
+        if: steps.changed.outputs.code == 'true'
+        run: |
+          cp apps/web/.env.example apps/web/.env.local
+          cp apps/site/.env.example apps/site/.env.local
+          cp packages/backend/.env.example packages/backend/.env.local
+
+      - name: Generate Wrangler types
+        if: steps.changed.outputs.code == 'true'
+        run: pnpm gen
+
+      # The browser binary is ~150MB and only changes when the pinned Playwright
+      # version does, which the lockfile hash captures. The OS-level libraries
+      # `--with-deps` installs live outside this path, so a cache hit still has
+      # to run `install-deps`.
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        if: steps.changed.outputs.code == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright Chromium
+        if: steps.changed.outputs.code == 'true' && steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm --filter web exec playwright install --with-deps chromium
+
+      - name: Install Playwright system dependencies
+        if: steps.changed.outputs.code == 'true' && steps.playwright-cache.outputs.cache-hit == 'true'
+        run: pnpm --filter web exec playwright install-deps chromium
+
+      - run: pnpm check
+        if: steps.changed.outputs.code == 'true'
+
+      - run: pnpm test
+        if: steps.changed.outputs.code == 'true'
+
+      - run: pnpm lint
+        if: steps.changed.outputs.code == 'true'
+
+      - run: pnpm check:changelog
+        if: steps.changed.outputs.code == 'true'
+
+      - run: pnpm audit:prod
+        if: steps.changed.outputs.code == 'true'
+
+      - run: pnpm build
+        if: steps.changed.outputs.code == 'true'
+
+      - name: Documentation-only change
+        if: steps.changed.outputs.code != 'true'
+        run: echo 'Only documentation changed — build and test steps skipped.'

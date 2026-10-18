@@ -1,0 +1,106 @@
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches: [main]
+    # '**.md' matches Markdown anywhere INCLUDING the repo root. '**/*.md' does
+    # not: the literal slash forces the path to contain a directory, so
+    # README.md and friends would still deploy.
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.cursor/**'
+      - '.agents/**'
+      - '.codex/**'
+      - '.claude/**'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Production public URLs. These win over the copied .env.example.
+      PUBLIC_CONVEX_URL: ${{ secrets.PUBLIC_CONVEX_URL }}
+      PUBLIC_CONVEX_SITE_URL: ${{ secrets.PUBLIC_CONVEX_SITE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.2
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Prepare example env
+        run: |
+          cp apps/web/.env.example apps/web/.env.local
+          cp apps/site/.env.example apps/site/.env.local
+          cp packages/backend/.env.example packages/backend/.env.local
+
+      - name: Generate Wrangler types
+        run: pnpm gen
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright Chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm --filter web exec playwright install --with-deps chromium
+
+      - name: Install Playwright system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: pnpm --filter web exec playwright install-deps chromium
+
+      - run: pnpm check
+
+      - run: pnpm test
+
+      - run: pnpm lint
+
+      - run: pnpm check:changelog
+
+      - run: pnpm audit:prod
+
+      - run: pnpm build
+
+      # `pnpm deploy` is pnpm's own command and errors with
+      # ERR_PNPM_INVALID_DEPLOY_TARGET. `run` selects the package script.
+      - name: Deploy Convex to production
+        run: pnpm --filter @stack/backend run deploy
+        env:
+          CONVEX_DEPLOY_KEY: ${{ secrets.CONVEX_DEPLOY_KEY }}
+
+      - name: Deploy Worker stack-web
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: apps/web
+          packageManager: pnpm
+          command: deploy --env production
+
+      - name: Deploy Worker stack-site
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: apps/site
+          packageManager: pnpm
+          command: deploy --env production

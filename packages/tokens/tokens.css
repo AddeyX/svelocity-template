@@ -1,0 +1,15 @@
+@theme inline {
+	--color-bg: #080616;
+	--color-surface: #1a1953;
+	--color-ink: #f4f6ff;
+	--color-ink-soft: #c9cef2;
+	--color-accent: #2f2fe4;
+	--color-accent-press: #162e93;
+	--color-accent-ink: #ffffff;
+	--color-line: #162e93;
+	--color-control: #8e97d6;
+	--color-danger: #ff5d73;
+	--color-danger-press: #ff8b9a;
+	--color-scrim: rgb(0 0 0 / 62%);
+	--font-sans: 'Inter Tight', system-ui, sans-serif;
+}

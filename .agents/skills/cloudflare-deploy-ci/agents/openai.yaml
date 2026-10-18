@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cloudflare Deploy CI"
+  short_description: "Deploy Cloudflare apps with CI guardrails"
+  default_prompt: "Use $cloudflare-deploy-ci to configure Cloudflare Workers deployment and GitHub Actions CI for this app."
