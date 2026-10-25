@@ -35,7 +35,7 @@
 		"cross-env": "^10.1.0",
 		"electron": "^35.7.5",
 		"electron-builder": "^26.0.12",
-		"svelte": "5.56.5",
+		"svelte": "5.57.2",
 		"svelte-check": "4.4.8",
 		"tailwindcss": "4.3.0",
 		"typescript": "^6.0.2",
