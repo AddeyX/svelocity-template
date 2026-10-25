@@ -47,7 +47,6 @@ jobs:
       - name: Prepare example env
         run: |
           cp apps/web/.env.example apps/web/.env.local
-          cp apps/site/.env.example apps/site/.env.local
           cp packages/backend/.env.example packages/backend/.env.local
 
       - name: Generate Wrangler types

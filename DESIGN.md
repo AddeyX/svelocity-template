@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Stack
-description: A private note list and a public waitlist.
+description: A private note list and a public landing page.
 colors:
   bg: '#080616'
   surface: '#1a1953'

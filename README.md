@@ -1,6 +1,6 @@
 # Stack
 
-A pnpm workspace for a SvelteKit product, a SvelteKit public site, and a Convex backend. Both apps deploy as Cloudflare Workers. The demo is a private note list and a public waitlist.
+A pnpm workspace for a SvelteKit product, a SvelteKit public site, and a Convex backend. Both apps deploy as Cloudflare Workers. The demo is a private note list and a public landing page.
 
 ## Run
 
@@ -23,7 +23,7 @@ pnpm test
 pnpm cdev
 ```
 
-Write the printed deployment into `packages/backend/.env.local`. Write the printed URLs into `apps/web/.env.local` and `apps/site/.env.local`. Restart `pnpm dev`. Sign up, add a note, delete it through the dialog, and join the waitlist from the site.
+Write the printed deployment into `packages/backend/.env.local`. Write the printed URLs into `apps/web/.env.local`. Restart `pnpm dev`. Sign up, add a note, and delete it through the dialog.
 
 ## Styles
 

@@ -10,7 +10,7 @@
 Browser
   → apps/web (SvelteKit, Worker stack-web) → Convex
 Visitor
-  → apps/site (SvelteKit, Worker stack-site) → waitlist.join
+  → apps/site (SvelteKit prerendered, Worker stack-site), no backend
 Desktop
   → apps/desktop (SvelteKit hash router, Electron) → Convex
 Phone
@@ -19,7 +19,7 @@ Phone
 
 ## Invariants
 
-1. Convex is the source of truth for notes and the waitlist.
+1. Convex is the source of truth for notes. Only the product apps import it. `apps/site` depends on `@stack/tokens` alone.
 2. The URL owns navigation.
 3. Every public Convex function authenticates first. `waitlist.join` is the named exception.
 4. A live `authSessions` row is required. A JWT alone is not enough.
