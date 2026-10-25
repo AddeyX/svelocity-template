@@ -25,6 +25,10 @@ pnpm cdev
 
 Write the printed deployment into `packages/backend/.env.local`. Write the printed URLs into `apps/web/.env.local` and `apps/site/.env.local`. Restart `pnpm dev`. Sign up, add a note, delete it through the dialog, and join the waitlist from the site.
 
+## Styles
+
+`packages/tokens/tokens.css` is the Tailwind theme. `packages/tokens/styles.css` holds `.btn`, `.field`, `.dialog`, and the base element styles, inside `@layer base` and `@layer components`. A utility on the same element wins: `class="btn px-3"` gets the smaller padding. A second theme overrides the `--color-*` variables under `:root[data-theme='light']`.
+
 ## Rename
 
 ```bash

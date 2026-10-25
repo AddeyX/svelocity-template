@@ -4,6 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"exports": {
-		"./tokens.css": "./tokens.css"
+		"./tokens.css": "./tokens.css",
+		"./styles.css": "./styles.css"
 	}
 }
