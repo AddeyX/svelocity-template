@@ -8,6 +8,6 @@
 
 `items` holds `userId`, `text`, and `createdAt`, indexed by `by_user`. `items.list` takes 50. `items.create` trims text and rejects lengths outside 1–200. `items.remove` deletes an owned row and returns `{ changed: true }`.
 
-`waitlist` holds a normalized email, indexed by `by_email`. `waitlist.join` is the only public function that skips auth. A repeat address returns `{ created: false }`.
+`waitlist` holds a normalized email, indexed by `by_email`. `waitlist.join` is the only public function that skips auth. A repeat address returns `{ created: false }`. No app calls it in the template; [site.md](../workflow/site.md) wires it into the site.
 
 Auth tables come from `@convex-dev/auth`. Helpers live in `convex/lib/`.

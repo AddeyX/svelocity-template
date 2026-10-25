@@ -7,6 +7,7 @@
 - Desktop shell: SvelteKit hash routes inside Electron.
 - Mobile shell: SvelteKit static app for Capacitor.
 - `@stack/tokens/styles.css`: shared base and component classes in Tailwind layers.
+- `docs/workflow/site.md`: ship the site as its own repo, or wire in the waitlist.
 
 ### Changed
 

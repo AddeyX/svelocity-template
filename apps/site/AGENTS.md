@@ -6,6 +6,7 @@ SvelteKit 2 + Svelte 5 runes. Every page prerenders. No account, no backend.
 
 - Copy → `../../VISION.md`
 - Visual changes → `../../DESIGN.md`
+- Own repo, or adding the waitlist → `../../docs/workflow/site.md`
 
 ## Laws
 

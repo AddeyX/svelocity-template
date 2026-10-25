@@ -24,6 +24,7 @@ Read context based on task. Do not read every project document by default.
 - Architecture map → `docs/ARCHITECTURE.md`
 - Product app → `apps/web/AGENTS.md`
 - Public site → `apps/site/AGENTS.md`
+- Site as its own repo, or adding the waitlist → `docs/workflow/site.md`
 - Desktop shell → `apps/desktop/AGENTS.md`
 - Mobile shell → `apps/mobile/AGENTS.md`
 - Backend → `packages/backend/AGENTS.md`

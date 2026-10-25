@@ -21,7 +21,7 @@ Phone
 
 1. Convex is the source of truth for notes. Only the product apps import it. `apps/site` depends on `@stack/tokens` alone.
 2. The URL owns navigation.
-3. Every public Convex function authenticates first. `waitlist.join` is the named exception.
+3. Every public Convex function authenticates first. `waitlist.join` is the named exception, ready for the site to opt into.
 4. A live `authSessions` row is required. A JWT alone is not enough.
 5. Note text is 1–200 characters. A list page is at most 50 notes.
 6. `items.remove` returns `{ changed: true }` or throws. Missing and foreign notes are `NOT_FOUND`.
@@ -37,3 +37,4 @@ Phone
 | Schema and functions   | [backend-and-data.md](architecture/backend-and-data.md)   |
 | Auth and headers       | [security-and-auth.md](architecture/security-and-auth.md) |
 | Dev, test, CI          | [operations.md](architecture/operations.md)               |
+| Site alone, waitlist   | [site.md](workflow/site.md)                               |

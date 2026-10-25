@@ -25,6 +25,12 @@ pnpm cdev
 
 Write the printed deployment into `packages/backend/.env.local`. Write the printed URLs into `apps/web/.env.local`. Restart `pnpm dev`. Sign up, add a note, and delete it through the dialog.
 
+## Which app needs Convex
+
+Convex belongs to the product apps: `apps/web`, `apps/desktop`, and `apps/mobile`. `apps/site` has no backend. Every page prerenders to HTML, and its only workspace dependency is `@stack/tokens`.
+
+That makes the site a template of its own. [`docs/workflow/site.md`](docs/workflow/site.md) has the steps to copy it out as a standalone repo, and the steps to wire `waitlist.join` back in when a launch needs one.
+
 ## Styles
 
 `packages/tokens/tokens.css` is the Tailwind theme. `packages/tokens/styles.css` holds `.btn`, `.field`, `.dialog`, and the base element styles, inside `@layer base` and `@layer components`. A utility on the same element wins: `class="btn px-3"` gets the smaller padding. A second theme overrides the `--color-*` variables under `:root[data-theme='light']`.
