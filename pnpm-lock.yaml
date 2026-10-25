@@ -30,11 +30,11 @@ importers:
         specifier: ^2.18.1
         version: 2.19.5(@internationalized/date@3.12.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)
       convex:
-        specifier: 1.46.0
-        version: 1.46.0
+        specifier: 1.47.0
+        version: 1.47.0
       convex-svelte:
         specifier: ^0.14.0
-        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.46.0)(svelte@5.56.5)
+        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.47.0)(svelte@5.56.5)
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^3.0.10
@@ -109,11 +109,11 @@ importers:
         specifier: ^2.18.1
         version: 2.19.5(@internationalized/date@3.12.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)
       convex:
-        specifier: 1.46.0
-        version: 1.46.0
+        specifier: 1.47.0
+        version: 1.47.0
       convex-svelte:
         specifier: ^0.14.0
-        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.46.0)(svelte@5.56.5)
+        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.47.0)(svelte@5.56.5)
     devDependencies:
       '@capacitor/android':
         specifier: ^8.0.0
@@ -164,11 +164,11 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tokens
       convex:
-        specifier: 1.46.0
-        version: 1.46.0
+        specifier: 1.47.0
+        version: 1.47.0
       convex-svelte:
         specifier: ^0.14.0
-        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.46.0)(svelte@5.56.5)
+        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.47.0)(svelte@5.56.5)
     devDependencies:
       '@sveltejs/adapter-cloudflare':
         specifier: 7.2.8
@@ -216,11 +216,11 @@ importers:
         specifier: ^2.18.1
         version: 2.19.5(@internationalized/date@3.12.4)(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)
       convex:
-        specifier: 1.46.0
-        version: 1.46.0
+        specifier: 1.47.0
+        version: 1.47.0
       convex-svelte:
         specifier: ^0.14.0
-        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.46.0)(svelte@5.56.5)
+        version: 0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.47.0)(svelte@5.56.5)
     devDependencies:
       '@sveltejs/adapter-cloudflare':
         specifier: 7.2.8
@@ -272,10 +272,10 @@ importers:
         version: 0.41.3
       '@convex-dev/auth':
         specifier: 0.0.94
-        version: 0.0.94(@auth/core@0.41.3)(convex@1.46.0)
+        version: 0.0.94(@auth/core@0.41.3)(convex@1.47.0)
       convex:
-        specifier: 1.46.0
-        version: 1.46.0
+        specifier: 1.47.0
+        version: 1.47.0
     devDependencies:
       '@edge-runtime/vm':
         specifier: ^5.0.0
@@ -285,7 +285,7 @@ importers:
         version: 22.20.5
       convex-test:
         specifier: ^0.0.53
-        version: 0.0.53(convex@1.46.0)
+        version: 0.0.53(convex@1.47.0)
       typescript:
         specifier: ^6.0.2
         version: 6.0.3
@@ -1710,8 +1710,8 @@ packages:
     peerDependencies:
       convex: ^1.32.0
 
-  convex@1.46.0:
-    resolution: {integrity: sha512-dhBwDQTZDOhi5SUGAX17EWNehCdNq6/UFrSL0eLZuGfMkdsQbCVWVRZCzbZ5CF+/pgvoGxtApbEoTSipqL4JTw==}
+  convex@1.47.0:
+    resolution: {integrity: sha512-B1z/lOmex7i09NASq8+2WG9rZLzGXXOSkpwGOpaNIvOs4awyW4RMgpVBjt8r2wvvHwhEBEsOr2pGYpulnmAxYQ==}
     engines: {node: '>=20.0.0', npm: '>=7.0.0'}
     hasBin: true
     peerDependencies:
@@ -3399,12 +3399,12 @@ snapshots:
 
   '@cloudflare/workers-types@4.20260702.1': {}
 
-  '@convex-dev/auth@0.0.94(@auth/core@0.41.3)(convex@1.46.0)':
+  '@convex-dev/auth@0.0.94(@auth/core@0.41.3)(convex@1.47.0)':
     dependencies:
       '@auth/core': 0.41.3
       '@oslojs/crypto': 1.0.1
       '@oslojs/encoding': 1.1.0
-      convex: 1.46.0
+      convex: 1.47.0
       cookie: 1.1.1
       is-network-error: 1.3.2
       jose: 5.10.0
@@ -4606,9 +4606,9 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  convex-svelte@0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.46.0)(svelte@5.56.5):
+  convex-svelte@0.14.0(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(convex@1.47.0)(svelte@5.56.5):
     dependencies:
-      convex: 1.46.0
+      convex: 1.47.0
       esm-env: 1.2.2
       runed: 0.37.1(@sveltejs/kit@2.70.2(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.56.5)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)(typescript@6.0.3)(vite@8.0.16(@types/node@22.20.5)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.56.5)
       svelte: 5.56.5
@@ -4616,11 +4616,11 @@ snapshots:
       - '@sveltejs/kit'
       - zod
 
-  convex-test@0.0.53(convex@1.46.0):
+  convex-test@0.0.53(convex@1.47.0):
     dependencies:
-      convex: 1.46.0
+      convex: 1.47.0
 
-  convex@1.46.0:
+  convex@1.47.0:
     dependencies:
       esbuild: 0.27.0
       prettier: 3.9.10

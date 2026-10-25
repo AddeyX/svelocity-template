@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@stack/backend": "workspace:*",
 		"@stack/tokens": "workspace:*",
-		"convex": "1.46.0",
+		"convex": "1.47.0",
 		"convex-svelte": "^0.14.0"
 	},
 	"devDependencies": {
