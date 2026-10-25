@@ -284,8 +284,8 @@ importers:
         specifier: ^22.19.0
         version: 22.20.5
       convex-test:
-        specifier: ^0.0.53
-        version: 0.0.53(convex@1.46.0)
+        specifier: ^0.0.64
+        version: 0.0.64(convex@1.46.0)
       typescript:
         specifier: ^6.0.2
         version: 6.0.3
@@ -1705,10 +1705,10 @@ packages:
       convex: ^1.30.0
       svelte: ^5.19.0
 
-  convex-test@0.0.53:
-    resolution: {integrity: sha512-bouZQTnTvZi8IHljHL++yClj1vcV+/9ZxEcd8JZz7RDxOfPkRKrkMgkk/xlX4M1EAiwcEJPNiQE7VJFvDM3lCQ==}
+  convex-test@0.0.64:
+    resolution: {integrity: sha512-HvaFwCA7CO3i9sBWkP/+HUpCad49zXitDLheLpt+TUOHVWhsWQ7hbPAyPTOFhHZJrodzngkCP/tW9/8uDSOJqQ==}
     peerDependencies:
-      convex: ^1.32.0
+      convex: ^1.43.0
 
   convex@1.46.0:
     resolution: {integrity: sha512-dhBwDQTZDOhi5SUGAX17EWNehCdNq6/UFrSL0eLZuGfMkdsQbCVWVRZCzbZ5CF+/pgvoGxtApbEoTSipqL4JTw==}
@@ -4616,7 +4616,7 @@ snapshots:
       - '@sveltejs/kit'
       - zod
 
-  convex-test@0.0.53(convex@1.46.0):
+  convex-test@0.0.64(convex@1.46.0):
     dependencies:
       convex: 1.46.0
 
