@@ -7,7 +7,8 @@
 - Ask only when the task is actually ambiguous.
 - Commit only when asked.
 - Durable rules belong in nested `AGENTS.md` or architecture docs.
-- Convex is the source of truth for the note list and the waitlist.
+- Convex is the source of truth for the note list.
+- Convex lives in the product apps: `apps/web`, `apps/desktop`, `apps/mobile`. `apps/site` stays backend-free so it ships alone.
 - The URL owns navigation.
 - bits-ui is the primitive library. Do not add a second one.
 - Plain `.ts` modules do not import `.svelte` files.
@@ -23,6 +24,7 @@ Read context based on task. Do not read every project document by default.
 - Architecture map → `docs/ARCHITECTURE.md`
 - Product app → `apps/web/AGENTS.md`
 - Public site → `apps/site/AGENTS.md`
+- Site as its own repo, or adding the waitlist → `docs/workflow/site.md`
 - Desktop shell → `apps/desktop/AGENTS.md`
 - Mobile shell → `apps/mobile/AGENTS.md`
 - Backend → `packages/backend/AGENTS.md`

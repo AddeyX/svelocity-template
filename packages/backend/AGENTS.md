@@ -12,7 +12,7 @@ Before Convex work, read `convex/_generated/ai/guidelines.md` when it exists.
 ## Laws
 
 - Authenticate every public function first.
-- `waitlist.join` is the named public exception.
+- `waitlist.join` is the named public exception. No app calls it yet; `docs/workflow/site.md` wires it into the site.
 - Load and ownership-check foreign keys before writes.
 - Bound inputs. Note text is 1–200 characters. A list page is 50 notes.
 - Growing reads are indexed and bounded.

@@ -1,4 +1,16 @@
-@theme inline {
+/*
+ * `@theme` (not `@theme inline`) emits each token as a CSS variable, and utilities
+ * read the variable. A second theme overrides the variables under a selector:
+ *
+ *   :root[data-theme='light'] {
+ *   	color-scheme: light;
+ *   	--color-bg: #f6f7fb;
+ *   	--color-ink: #0d0f1a;
+ *   }
+ *
+ * Then `<html data-theme="light">` switches every `bg-bg` and `text-ink` at runtime.
+ */
+@theme {
 	--color-bg: #080616;
 	--color-surface: #1a1953;
 	--color-ink: #f4f6ff;

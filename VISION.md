@@ -8,7 +8,7 @@ A new app should not start from an empty directory and a pile of decisions that 
 
 ## What this is
 
-Stack is the shared shape: a product Worker, a public Worker, and one Convex backend. The demo is a private note list and a public waitlist so the first `pnpm dev` has a screen.
+Stack is the shared shape: a product Worker, a public Worker, and one Convex backend. The demo is a private note list and a public landing page so the first `pnpm dev` has a screen.
 
 ## What this refuses
 

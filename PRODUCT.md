@@ -6,7 +6,7 @@ One person, with a short private list of notes. The public site is for someone w
 
 ## Product purpose
 
-The demo turns the template into something you can run. Sign in, write a note, delete it through a confirmation, and join a waitlist from the public page. That is the whole product.
+The demo turns the template into something you can run. Sign in, write a note, and delete it through a confirmation. The public page describes the product and links to it. That is the whole product.
 
 Success is a checkout that already has a styled sign-in screen, a list, and a public page on the same tokens.
 

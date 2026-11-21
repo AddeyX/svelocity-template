@@ -10,4 +10,4 @@
 
 `requireOwnedItem` returns `NOT_FOUND` for a missing note and for a note owned by someone else.
 
-Both apps set `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, and `Permissions-Policy` from `src/lib/server/securityHeaders.ts`. HTTPS responses also set HSTS. A canonical-host redirect waits until a real domain is named in Wrangler.
+Both apps set `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, and `Permissions-Policy` from `src/lib/server/securityHeaders.ts`. HTTPS responses also set HSTS. Prerendered site pages skip the hook, so `apps/site/_headers` sends the same set, checked by `securityHeaders.spec.ts`. A canonical-host redirect waits until a real domain is named in Wrangler.

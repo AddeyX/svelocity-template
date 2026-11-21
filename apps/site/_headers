@@ -1,0 +1,8 @@
+# Prerendered pages are served as static assets and skip `hooks.server.ts`.
+# Keep these values equal to `securityHeaders({ https: true })`; the spec checks.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
